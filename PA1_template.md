@@ -12,7 +12,7 @@ total_steps<-tapply(activity$steps,activity$date,sum,na.rm=TRUE)
 qplot(total_steps,xlab = "Total number of steps taken per day for binwidth 1000",binwidth=1000)
 ```
 
-![](PA1_template_files/figure-markdown_github/plot,mean,median-1.png?raw=true)
+![](PA1_template_files/figure-markdown_github/plot,mean,median-1.png)
 
 ``` r
 mean_steps<-mean(total_steps,na.rm = TRUE)
@@ -37,7 +37,7 @@ steps_interval<-aggregate(x=list(steps=activity$steps),by=list(interval=activity
 ggplot(steps_interval,aes(x=interval,y=steps))+geom_line()+xlab("5 minutes interval")+ylab("Average number of steps taken")
 ```
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-1-1.png?raw=true)
+![](PA1_template_files/figure-markdown_github/unnamed-chunk-1-1.png)
 
 ``` r
 steps_interval[max(which.max(steps_interval$steps)),]
